@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+    body{
+        background-color:aqua;
+    }
+#name{
+    padding:20px;
+    background-color:brown;
+
+
+}
+#container{
+    text-align: center;
+    justify-content:center;
+    gap:20px;
+    margin:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="container">
+
+    <h1>Play your move</h1>
+    <h1 id="">Lets see if you can win</h1>
+        <button onclick="
+        // computermove();
+        player('rock');
+        " id="name">Rock</button>
+            <button 
+            onclick="player('paper')" id="name">Paper</button>
+            <button onclick=" 
+            
+            player('scissors')" id="name">Scissors</button>
+
+
+
+
+</div>
+ 
+
+
+
+    <script>
+        function computermove() {
+            let computer = Math.random();
+            if (computer >= 0 && computer < 1 / 3) {
+                return 'rock';
+            }
+            if (computer >= 1 / 3 && computer < 2 / 3) {
+                return 'paper';
+            }
+            if (computer >= 2 / 3 && computer < 1) {
+                return 'scissors';
+            }
+            // console.log(computer);
+        }
+
+
+        function player(playermove) {
+            const computer = computermove();
+            let result = '';
+            if (playermove === computer) {
+                result = 'it is a tie';
+            }
+            else if
+
+                ((playermove === 'rock' && computer === 'scissors') ||
+                (playermove === 'paper' && computer === 'rock') ||
+                (playermove === 'scissors' && computer === 'paper')
+            ) {
+                result = 'you win ';
+            }
+            else {
+
+                         result = 'you lost';
+            }
+    
+            alert(`you chose ${playermove} and computer chose ${computer}  ${result} `);
+
+
+        }
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>
